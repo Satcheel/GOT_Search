@@ -1,0 +1,106 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: white;
+    height: 150px;
+    padding: 20px;
+    color: black;
+}
+
+html,
+body {
+    /*background-color: black;*/
+    color: black;
+    background-image: './GOT.jpg';
+    background-size: cover;
+    opacity: 0.97;
+}
+
+.jumbotron {
+    color: black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    height: 100px;
+    font-family: 'Uncial Antiqua', cursive;
+    /*background-image: url('GOT_header1.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+opacity: 0.2;*/
+}
+
+#navigation {
+    background-color: white;
+    color: black;
+}
+
+.main-container {
+    color: black;
+}
+
+#name {
+    font-family: 'Uncial Antiqua', cursive;
+    background-color: #333333;
+    color: white;
+}
+
+#table {
+    background-color: white;
+    font-family: Ubuntu;
+    border-collapse: collapse;
+    border: none;
+    text-align: center;
+    font-size: medium;
+}
+
+td,
+tr,
+th {
+    padding: 0;
+    border-top: none !important;
+}
+
+br {
+    line-height: 20%;
+}
+
+#search {
+    /*padding: 6px 10px;*/
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    background: white;
+    color: black;
+    font-size: 17px;
+    border: 1px solid;
+    border-color: grey;
+    cursor: pointer;
+}
+
+.btn {
+    background: black;
+    color: white;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    color: #ffffff !important;
+    background-color: #000000 !important;
+}
+
+#error {
+    color: red;
+}
