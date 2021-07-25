@@ -8,17 +8,17 @@
 }
 
 .App-header {
-    background-color: white;
+    /* background-color: white; */
     height: 150px;
     padding: 20px;
-    color: black;
+    color: white;
 }
 
 html,
 body {
     /*background-color: black;*/
     color: black;
-    background-image: './GOT.jpg';
+    background-image: url("../public/GOT.jpg");
     background-size: cover;
     opacity: 0.97;
 }
@@ -51,20 +51,14 @@ opacity: 0.2;*/
     color: white;
 }
 
-#table {
-    background-color: white;
-    font-family: Ubuntu;
-    border-collapse: collapse;
-    border: none;
-    text-align: center;
-    font-size: medium;
-}
+table th {
+    text-align: center; 
+ }
 
-td,
-tr,
-th {
-    padding: 0;
-    border-top: none !important;
+.table {
+    margin: auto;
+    width: 50% !important;
+    background-color: #ffffff;
 }
 
 br {

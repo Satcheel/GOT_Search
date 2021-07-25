@@ -6,33 +6,48 @@ function Character(props)
     let titles = null;
     if(props.character.titles && props.character.titles.length)
     {
-        titles = props.character.titles.map((title, ind) => <p key={ind}>{title}</p>);
+        titles = props.character.titles.filter(value => value).map((title, ind) => <p key={ind}>{title}</p>);
+        if(titles!=null && titles.length===0)
+        {
+            titles = null;
+        }
     }
     let aliases = null;
     if(props.character.aliases && props.character.aliases.length)
     {
-        aliases = props.character.aliases.map((alias, ind) => <p key={ind}>{alias}</p>);
+        aliases = props.character.aliases.filter(value => value).map((alias, ind) => <p key={ind}>{alias}</p>);
+        if(aliases!=null && aliases.length===0)
+        {
+            aliases = null;
+        }
     }
     let playedBy = null;
     if(props.character.playedBy && props.character.playedBy.length)
     {
-        playedBy = props.character.playedBy.map((p, ind) => <p key={ind}>{p}</p>);
+        playedBy = props.character.playedBy.filter(value => value).map((p, ind) => <p key={ind}>{p}</p>);
+        if(playedBy!=null && playedBy.length===0)
+        {
+            playedBy = null;
+        }
     }
     return (
-        <div className="card">
-            <div className="card-body">
-                
-                <h4 className="card-title">{props.character.name}</h4>
-                { props.character.gender && <h6 className="card-subtitle mb-2 text-muted">Gender: {props.character.gender} </h6> }
-                { props.character.born && <h6 className="card-subtitle mb-2 text-muted">Born: {props.character.born} </h6> }
-                { props.character.died && <h6 className="card-subtitle mb-2 text-muted">Died: {props.character.died} </h6> }
-                { props.character.culture && <h6 className="card-subtitle mb-2 text-muted">Culture: {props.character.culture} </h6> }
-                { props.character.father && <h6 className="card-subtitle mb-2 text-muted">Father: {props.character.father} </h6> }
-                { props.character.mother && <h6 className="card-subtitle mb-2 text-muted">Mother: {props.character.mother} </h6> }
-                { props.character.spouse && <h6 className="card-subtitle mb-2 text-muted">Spouse: {props.character.spouse} </h6> }
-                { props.character.titles && <h5 className="card-title mb-2 text-muted">Titles: {titles} </h5> }
-                { props.character.aliases && <h5 className="card-title mb-2 text-muted">Aliases: {aliases} </h5> }
-                { props.character.playedBy && <h5 className="card-title mb-2 text-muted">Played by: {playedBy} </h5> }
+        <div className="card row justify-content-cente">
+            <h2 className="card-title" style={{color: '#ffffff', backgroundColor: '#000000'}}>{props.character.name}</h2>
+            <div className="card-body col-auto">
+                <table className="table table-responsive">
+                    <tbody>
+                            { titles && titles.length && <tr> <th scope="row">Titles</th> <td>{titles} </td> </tr>}
+                            { aliases && aliases.length && <tr> <th scope="row">Aliases</th> <td>{aliases} </td> </tr> }
+                            { playedBy && playedBy.length && <tr> <th scope="row">Played by</th> <td>{playedBy} </td> </tr> }
+                            { props.character.gender && <tr> <th scope="row">Gender</th> <td>{props.character.gender} </td> </tr> }
+                            { props.character.born && <tr> <th scope="row">Born</th> <td>{props.character.born} </td> </tr> }
+                            { props.character.died && <tr> <th scope="row">Died</th> <td>{props.character.died} </td> </tr> }
+                            { props.character.culture && <tr> <th scope="row">Culture</th> <td>{props.character.culture} </td> </tr> }
+                            { props.character.father && <tr> <th scope="row">Father</th> <td>{props.character.father} </td> </tr> }
+                            { props.character.mother && <tr> <th scope="row">Mother</th> <td>{props.character.mother} </td> </tr> }
+                            { props.character.spouse && <tr> <th scope="row">Spouse</th> <td>{props.character.spouse} </td> </tr> }
+                    </tbody>
+                </table>
             </div>
         </div>
     );

@@ -7,35 +7,50 @@ function House(props)
     let titles = null;
     if(props.house.titles && props.house.titles.length)
     {
-        titles = props.house.titles.map((title, ind) => <p key={ind}>{title}</p>);
+        titles = props.house.titles.filter(value => value).map((title, ind) => <p key={ind}>{title}</p>);
+        if(titles!=null && titles.length===0)
+        {
+            titles = null;
+        }
     }
     let ances_weapons = null;
     if(props.house.ancestralWeapons && props.house.ancestralWeapons.length)
     {
-        ances_weapons = props.house.ancestralWeapons.map((weapon, ind) => <p key={ind}>{weapon}</p>);
+        ances_weapons = props.house.ancestralWeapons.filter(value => value).map((weapon, ind) => <p key={ind}>{weapon}</p>);
+        if(ances_weapons!=null && ances_weapons.length===0)
+        {
+            ances_weapons = null;
+        }
     }
     let seats = null;
     if(props.house.seats && props.house.seats.length)
     {
-        seats = props.house.seats.map((p, ind) => <p key={ind}>{p}</p>);
+        seats = props.house.seats.filter(value => value).map((p, ind) => <p key={ind}>{p}</p>);
+        if(seats!=null && seats.length===0)
+        {
+            seats = null;
+        }
     }
 
     return (
-        <div className="card">
-            <div className="card-body">
-                
-                <h4 className="card-title">{props.house.name}</h4>
-                { props.house.region && <h6 className="card-subtitle mb-2 text-muted">Region: {props.house.region} </h6> }
-                { props.house.coatOfArms && <h6 className="card-subtitle mb-2 text-muted">Coat of Arms: {props.house.coatOfArms} </h6> }
-                { props.house.words && <h6 className="card-subtitle mb-2 text-muted">Slogan: {props.house.words} </h6> }
-                { props.house.currentLord && <h6 className="card-subtitle mb-2 text-muted">Current Lord`: {props.house.currentLord} </h6> }
-                { props.house.seats && <h5 className="card-title mb-2 text-muted">Seats: {seats} </h5> }
-                { props.house.heir && <h6 className="card-subtitle mb-2 text-muted">Heir: {props.house.heir} </h6> }
-                { props.house.founded && <h6 className="card-subtitle mb-2 text-muted">Founded: {props.house.founded} </h6> }
-                { props.house.founder && <h6 className="card-subtitle mb-2 text-muted">Founder: {props.house.founder} </h6> }
-                { props.house.diedOut && <h6 className="card-subtitle mb-2 text-muted">Died out: {props.house.diedOut} </h6> }
-                { props.house.titles && <h5 className="card-title mb-2 text-muted">Titles: {titles} </h5> }
-                { props.house.ancestralWeapons && <h5 className="card-title mb-2 text-muted">Ancestral Weapons: {ances_weapons} </h5> }
+        <div className="card row justify-content-cente">
+            <h2 className="card-title" style={{color: '#ffffff', backgroundColor: '#000000'}}>{props.house.name}</h2>
+            <div className="card-body col-auto">
+                <table className="table table-responsive">
+                    <tbody>
+                            { props.house.coatOfArms && <tr> <th scope="row">Coat of Arms</th> <td>{props.house.coatOfArms} </td> </tr> }
+                            { props.house.words && <tr> <th scope="row">Slogan</th> <td>{props.house.words} </td> </tr> }
+                            { props.house.region && <tr> <th scope="row">Region</th> <td>{props.house.region} </td> </tr>}
+                            { props.house.currentLord && <tr> <th scope="row">Current Lord</th> <td>{props.house.currentLord} </td> </tr> }
+                            { seats && seats.length && <tr> <th scope="row">Seats</th> <td>{seats} </td> </tr> }
+                            { props.house.heir && <tr> <th scope="row">Heir</th> <td>{props.house.heir} </td> </tr> }
+                            { props.house.founded && <tr> <th scope="row">Founded</th> <td>{props.house.founded} </td> </tr> }
+                            { props.house.founder && <tr> <th scope="row">Founder</th> <td>{props.house.founder} </td> </tr> }
+                            { props.house.diedOut && <tr> <th scope="row">Died out</th> <td>{props.house.diedOut} </td> </tr> }
+                            { titles && titles.length && <tr> <th scope="row">Titles</th> <td>{titles} </td> </tr> }
+                            { ances_weapons && ances_weapons.length && <tr> <th scope="row">Ancestral Weapons</th> <td>{ances_weapons} </td> </tr> }
+                    </tbody>
+                </table>
             </div>
         </div>
     );
