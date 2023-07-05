@@ -2,4 +2,6 @@
 
 Search Game of Thrones characters and houses.
 
-Using https://anapioficeandfire.com/ api.
+Used https://anapioficeandfire.com/ api for searching GOT information.
+
+Deployed at https://sleepy-davinci-389278.netlify.app/
